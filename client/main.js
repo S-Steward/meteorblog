@@ -3,9 +3,13 @@ import { ReactiveVar } from 'meteor/reactive-var';
 
 import './main.html';
 
-Template.hello.onCreated(function helloOnCreated() {
+Template.blog.events({
   // counter starts at 0
-  this.counter = new ReactiveVar(0);
+  'submit #blogForm'function(e){
+  e.preventDefault();
+  var title= $('#blogTitle').val();
+  var body=$('#blogSubject').val();
+  Meteor.call('submitPost',title,body);
 });
 
 Template.hello.helpers({
