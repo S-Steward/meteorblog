@@ -1,7 +1,3 @@
-import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
-
-import './main.html';
 
 Template.blog.events({
   // counter starts at 0
